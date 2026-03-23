@@ -104,7 +104,11 @@ This allowed me to regain access to the server.
 * Importance of correct keyboard layout (AZERTY vs QWERTY)
 
 
-
 ## Screenshots
 
-See the screenshots in the `screenshots/` folder.
+![Install](../screenshots/install.png)
+![Network](../screenshots/network.png)
+![IP](../screenshots/ip.png)
+![SSH Status](../screenshots/ssh-status.png)
+![SSH Connection](../screenshots/ssh.png)
+
