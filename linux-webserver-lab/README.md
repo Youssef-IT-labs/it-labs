@@ -45,3 +45,24 @@ The default Nginx welcome page should be visible from the client machine.
 
 ![Nginx Status](../screenshots/nginx-status.png)
 ![Nginx Browser](../screenshots/nginx-browser.png)
+
+## Custom Website
+
+After installing Nginx, I replaced the default page with a custom HTML page hosted from `/var/www/html`.
+
+### Commands used
+
+```bash
+sudo cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bak
+sudo nano /var/www/html/index.html
+sudo rm /var/www/html/index.nginx-debian.html
+sudo systemctl reload nginx
+```
+
+## Additional Screenshots
+
+### Web Root Files
+![Web Root Files](../screenshots/web-root-files.png)
+
+### Custom Website
+![Custom Website](../screenshots/custom-site-browser.png)
