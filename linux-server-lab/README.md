@@ -11,10 +11,9 @@ The goal of this lab was to install and configure an Ubuntu Server and enable re
 * VMware Workstation
 * Ubuntu Server 24.04 LTS
 
----
 <img width="1326" height="557" alt="image" src="https://github.com/user-attachments/assets/2500dc0a-b0c9-4a12-85dd-ea8ccf38e29b" />
 
----
+
 ## Network Configuration
 
 The server was configured with two network adapters:
