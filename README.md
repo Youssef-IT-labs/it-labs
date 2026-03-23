@@ -1,2 +1,2 @@
 # it-labs
-Mijn IT labs (Linux, servers, networking)
+My IT labs (Linux, servers, networking)
