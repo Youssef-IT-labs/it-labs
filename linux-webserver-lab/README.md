@@ -163,3 +163,26 @@ sudo ufw allow 443
 
 ![SSL Certificate](../screenshots/ssl-certificate-details.png)
 
+## Real SSL Attempt with Let's Encrypt
+
+I tested whether I could configure a publicly trusted SSL certificate for the lab environment.
+
+### Result
+
+This was not possible in the current setup because the server is running on a private local IP address (`192.168.129.36`) inside a virtual lab environment.
+
+Let's Encrypt requires the domain and validation endpoint to be publicly reachable, or to use DNS-based validation with a real domain.  
+Because this lab server is only accessible on the local network, a publicly trusted certificate could not be issued.
+
+### What I learned
+
+- The difference between a self-signed certificate and a publicly trusted certificate
+- Why Let's Encrypt does not work directly with private local IP addresses
+- That public SSL usually requires either:
+  - a public domain name and public HTTP validation
+  - or DNS-01 validation with control over DNS records
+
+### Conclusion
+
+For this lab, a self-signed certificate was the correct solution for testing HTTPS locally.
+
