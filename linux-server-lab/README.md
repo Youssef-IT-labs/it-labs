@@ -11,7 +11,18 @@ The goal of this lab was to install and configure an Ubuntu Server and enable re
 * VMware Workstation
 * Ubuntu Server 24.04 LTS
 
-<img width="1326" height="557" alt="image" src="https://github.com/user-attachments/assets/2500dc0a-b0c9-4a12-85dd-ea8ccf38e29b" />
+
+---
+
+# 🧠 EXTRA CLEANUP (aanrader)
+
+Maak je note netjes bovenaan:
+
+```markdown
+> **Note**
+>
+> During installation, the server initially received an IP address via DHCP on a bridged network.  
+> Later, the network configuration was changed to a NAT + Host-only setup for lab isolation and c
 
 
 ## Network Configuration
