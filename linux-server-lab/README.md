@@ -14,10 +14,6 @@ The goal of this lab was to install and configure an Ubuntu Server and enable re
 
 ---
 
-# 🧠 EXTRA CLEANUP (aanrader)
-
-Maak je note netjes bovenaan:
-
 ```markdown
 > **Note**
 >
