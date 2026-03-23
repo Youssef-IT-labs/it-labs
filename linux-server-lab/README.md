@@ -12,6 +12,11 @@ The goal of this lab was to install and configure an Ubuntu Server and enable re
 * Ubuntu Server 24.04 LTS
 
 ---
+### Note
+
+During installation, the server initially received an IP address via DHCP on a bridged network.  
+Later, the network configuration was changed to a NAT + Host-only setup for lab isolation and control.
+---
 
 ## Network Configuration
 
