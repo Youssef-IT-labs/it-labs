@@ -66,3 +66,21 @@ sudo systemctl reload nginx
 
 ### Custom Website
 ![Custom Website](../screenshots/custom-site-browser.png)
+
+## Firewall Configuration (UFW)
+
+To secure the server, I configured UFW (Uncomplicated Firewall).
+
+### Commands used
+
+```bash
+sudo apt install ufw -y
+sudo ufw allow ssh
+sudo ufw allow 80
+sudo ufw enable
+sudo ufw status
+```
+
+### Screenshot
+
+![UFW Status](../screenshots/ufw-status.png)
