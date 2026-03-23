@@ -84,3 +84,34 @@ sudo ufw status
 ### Screenshot
 
 ![UFW Status](../screenshots/ufw-status.png)
+
+## Multiple Websites (Virtual Hosts)
+
+I configured Nginx to host multiple websites on the same server using different ports.
+
+### Second Website Setup
+
+```bash
+sudo mkdir -p /var/www/site2
+sudo nano /var/www/site2/index.html
+sudo chown -R www-data:www-data /var/www/site2
+```
+
+### Nginx Configuration
+
+```bash
+sudo nano /etc/nginx/sites-available/site2
+sudo ln -s /etc/nginx/sites-available/site2 /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+### Firewall
+
+```bash
+sudo ufw allow 8080
+```
+
+### Screenshots
+
+![Second Site](../screenshots/site2-browser.png)
