@@ -4,10 +4,29 @@
 
 The goal of this lab was to install and configure an Ubuntu Server and enable remote access using SSH.
 
+---
+
 ## Environment
 
 * VMware Workstation
 * Ubuntu Server 24.04 LTS
+
+---
+
+## Network Configuration
+
+The server was configured with two network adapters:
+
+* Adapter 1: NAT (internet access)
+* Adapter 2: Host-only (VMnet1 lab network)
+
+The server was assigned a static IP address on the lab network:
+
+```bash
+192.168.10.10
+```
+
+---
 
 ## Steps
 
@@ -15,86 +34,121 @@ The goal of this lab was to install and configure an Ubuntu Server and enable re
 
 * 4GB RAM
 * 20GB disk
-* Bridged network
+
+---
 
 ### 2. Ubuntu Server Installation
 
 The Ubuntu Server operating system was installed using the official ISO.
 
-### 3. SSH Configuration
-During the installation, I selected the option "Install OpenSSH server", which automatically installed SSH.
+---
 
-After installation, I verified that the SSH service was running:
+### 3. SSH Configuration
+
+During the installation, the option **"Install OpenSSH server"** was selected, which automatically installed SSH.
+
+After installation, the SSH service was verified:
 
 ```bash
 sudo systemctl status ssh
 ```
-If the service was not running, it can be started and enabled with:
+
+If the service is not running:
 
 ```bash
 sudo systemctl start ssh
 sudo systemctl enable ssh
 ```
 
+---
+
 ### 4. IP Address Configuration
 
-To find the server's IP address, I used:
+To verify the network configuration:
 
 ```bash
 ip a
 ```
 
-### 5. SSH Connection Test
-
-I successfully connected to the server remotely from my host machine using:
+The server uses a static IP on the host-only network:
 
 ```bash
-ssh student@192.168.129.36
+192.168.10.10
 ```
+
+---
+
+### 5. SSH Connection Test
+
+A successful remote connection was established from the host machine:
+
+```bash
+ssh student@192.168.10.10
+```
+
+---
 
 ## Result
 
-A fully functional Linux server with remote SSH access.
+A fully functional Linux server with remote SSH access over a dedicated lab network.
+
+---
 
 ## What I Learned
 
 * Installing a Linux server
 * Configuring SSH access
-* Basic networking concepts (DHCP & IP addressing)
-* Troubleshooting services
+* Understanding network adapters (NAT vs Host-only)
+* Working with static IP addressing
+* Troubleshooting connectivity issues
+
+---
 
 ## Troubleshooting
 
 ### Password Reset Issue
 
-During the setup, I encountered an issue where I could not log in due to an incorrect password.
+During setup, I encountered an issue where I could not log in due to an incorrect password.
 
-To resolve this, I used recovery mode and performed the following steps:
+To resolve this:
 
-1. Booted into **GRUB menu**
-2. Selected **Advanced options for Ubuntu**
-3. Chose **recovery mode**
-4. Opened a root shell
+* Booted into GRUB menu
+* Selected **Advanced options for Ubuntu**
+* Chose **Recovery mode**
+* Opened a root shell
 
-Then I remounted the filesystem as writable:
+Remounted the filesystem:
 
 ```bash
 mount -o remount,rw /
 ```
 
-After that, I reset the password:
+Reset the password:
 
 ```bash
 passwd student
 ```
 
-Finally, I rebooted the system:
+Rebooted the system:
 
 ```bash
 reboot
 ```
 
-This allowed me to regain access to the server.
+---
+
+### Network Connectivity Issue
+
+After changing the network configuration, SSH stopped working due to incorrect adapter mapping.
+
+This was resolved by:
+
+* Configuring Adapter 1 as NAT
+* Configuring Adapter 2 as Host-only (VMnet1)
+* Assigning a static IP address to the server
+* Ensuring the correct interface mapping in Netplan
+
+---
 
 ## Lessons Learned
 
@@ -102,6 +156,14 @@ This allowed me to regain access to the server.
 * How to remount the filesystem
 * How to reset a user password
 * Importance of correct keyboard layout (AZERTY vs QWERTY)
+* Understanding VMware networking (NAT vs Host-only)
+
+---
+
+## Screenshots
+
+See the `screenshots` folder for installation, SSH, and network configuration images.
+
 
 
 ## Screenshots
