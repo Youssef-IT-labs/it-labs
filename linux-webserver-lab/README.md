@@ -115,3 +115,51 @@ sudo ufw allow 8080
 ### Screenshots
 
 ![Second Site](../screenshots/site2-browser.png)
+
+## HTTPS Configuration (SSL)
+
+To secure the web server, I configured HTTPS using a self-signed SSL certificate.
+
+A self-signed certificate encrypts the connection, but it is not trusted by browsers, which results in a warning message.
+
+### Commands used
+
+```bash
+sudo apt install openssl -y
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+-keyout /etc/ssl/private/nginx-selfsigned.key \
+-out /etc/ssl/certs/nginx-selfsigned.crt
+```
+
+### Nginx SSL Configuration
+
+```bash
+sudo nano /etc/nginx/sites-available/default
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+### Firewall
+
+```bash
+sudo ufw allow 443
+```
+
+### Screenshots
+
+#### HTTPS Warning
+
+![HTTPS Warning](../screenshots/https-warning.png)
+
+#### HTTPS Website
+
+![HTTPS Website](../screenshots/https-browser.png)
+
+#### Firewall with HTTPS
+
+![UFW 443](../screenshots/ufw-443.png)
+
+#### SSL Certificate Details
+
+![SSL Certificate](../screenshots/ssl-certificate-details.png)
+
