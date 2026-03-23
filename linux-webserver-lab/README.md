@@ -40,3 +40,8 @@ The default Nginx welcome page should be visible from the client machine.
 - How to verify and manage Linux services
 - Basic web server deployment
 - Testing network connectivity from a client
+
+  ## Screenshots
+
+![Nginx Status](../screenshots/nginx-status.png)
+![Nginx Browser](../screenshots/nginx-browser.png)
