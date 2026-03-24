@@ -13,7 +13,7 @@ The goal of this lab was to install and configure an Ubuntu Server and enable re
 
 
 ---
-> **Note**
+> **Note:**
 >
 > During installation, the server initially received an IP address via DHCP on a bridged network.  
 > Later, the network configuration was changed to a NAT + Host-only setup for lab isolation and control.
@@ -27,7 +27,7 @@ The server was configured with two network adapters:
 
 The server was assigned a static IP address on the lab network:
 
-**192.168.10.10**
+`192.168.10.10`
 
 ---
 
