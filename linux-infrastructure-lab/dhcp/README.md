@@ -130,12 +130,12 @@ A fully functional DHCP server capable of automatically assigning IP addresses w
 
 ## Screenshots
 
-![DHCP Status](../screenshots/dhcp-status.png)
+![DHCP Status](./screenshots/dhcp-status.png)
 
-![DHCP Config](../screenshots/dhcp-config.png)
+![DHCP Config](./screenshots/dhcp-config.png)
 
-![DHCP Interface](../screenshots/dhcp-interface.png)
+![DHCP Interface](./screenshots/dhcp-interface.png)
 
-![Client IP](../screenshots/dhcp-client-ip.png)
+![Client IP](./screenshots/dhcp-client-ip.png)
 
 
