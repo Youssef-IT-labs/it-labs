@@ -1,56 +1,74 @@
 # Linux Web Server Lab
 
 ## Objective
+
 The goal of this lab is to install and configure Nginx on Ubuntu Server and verify web access from a client machine.
 
+---
+
 ## Environment
-- VMware Workstation
-- Ubuntu Server 24.04 LTS
-- SSH access already configured
+
+* VMware Workstation
+* Ubuntu Server 24.04 LTS
+* SSH access
+
+---
+
+## Network Configuration
+
+The server is running on a host-only lab network with the following IP address:
+
+**192.168.10.10**
+
+---
 
 ## Steps
 
-### 1. Update package list
+### 1. Update Package List
+
 ```bash
 sudo apt update
 ```
 
+---
+
 ### 2. Install Nginx
+
 ```bash
 sudo apt install nginx -y
 ```
 
-### 3. Verify Nginx service
+---
+
+### 3. Verify Nginx Service
+
 ```bash
 sudo systemctl status nginx
 ```
 
-### 4. Test web access
-Open a browser on the host machine and browse to:
+---
 
-```bash
-http://SERVER-IP
+### 4. Test Web Access
+
+Open a browser on the host machine:
+
+```
+http://192.168.10.10
 ```
 
-## Expected Result
-The default Nginx welcome page should be visible from the client machine.
+---
 
-## What I Learned
-- How to install Nginx on Ubuntu Server
-- How to verify and manage Linux services
-- Basic web server deployment
-- Testing network connectivity from a client
+## Result
 
-  ## Screenshots
+The default Nginx welcome page is accessible from the client machine.
 
-![Nginx Status](../screenshots/nginx-status.png)
-![Nginx Browser](../screenshots/nginx-browser.png)
+---
 
 ## Custom Website
 
-After installing Nginx, I replaced the default page with a custom HTML page hosted from `/var/www/html`.
+The default Nginx page was replaced with a custom HTML page.
 
-### Commands used
+### Commands Used
 
 ```bash
 sudo cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bak
@@ -59,19 +77,13 @@ sudo rm /var/www/html/index.nginx-debian.html
 sudo systemctl reload nginx
 ```
 
-## Additional Screenshots
-
-### Web Root Files
-![Web Root Files](../screenshots/web-root-files.png)
-
-### Custom Website
-![Custom Website](../screenshots/custom-site-browser.png)
+---
 
 ## Firewall Configuration (UFW)
 
-To secure the server, I configured UFW (Uncomplicated Firewall).
+To secure the server, UFW was configured.
 
-### Commands used
+### Commands Used
 
 ```bash
 sudo apt install ufw -y
@@ -81,15 +93,13 @@ sudo ufw enable
 sudo ufw status
 ```
 
-### Screenshot
-
-![UFW Status](../screenshots/ufw-status.png)
+---
 
 ## Multiple Websites (Virtual Hosts)
 
-I configured Nginx to host multiple websites on the same server using different ports.
+A second website was configured using a different port.
 
-### Second Website Setup
+### Setup
 
 ```bash
 sudo mkdir -p /var/www/site2
@@ -112,17 +122,13 @@ sudo systemctl reload nginx
 sudo ufw allow 8080
 ```
 
-### Screenshots
+---
 
-![Second Site](../screenshots/site2-browser.png)
+## HTTPS Configuration (Self-Signed SSL)
 
-## HTTPS Configuration (SSL)
+A self-signed certificate was created to enable HTTPS.
 
-To secure the web server, I configured HTTPS using a self-signed SSL certificate.
-
-A self-signed certificate encrypts the connection, but it is not trusted by browsers, which results in a warning message.
-
-### Commands used
+### Commands Used
 
 ```bash
 sudo apt install openssl -y
@@ -131,7 +137,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 -out /etc/ssl/certs/nginx-selfsigned.crt
 ```
 
-### Nginx SSL Configuration
+### Nginx Configuration
 
 ```bash
 sudo nano /etc/nginx/sites-available/default
@@ -145,44 +151,61 @@ sudo systemctl reload nginx
 sudo ufw allow 443
 ```
 
-### Screenshots
+---
 
-#### HTTPS Warning
+### Note
 
-![HTTPS Warning](../screenshots/https-warning.png)
+The HTTPS setup uses a self-signed SSL certificate.
+Because it is not issued by a trusted Certificate Authority, browsers display a warning even though the connection is encrypted.
 
-#### HTTPS Website
+---
 
-![HTTPS Website](../screenshots/https-browser.png)
+## Real SSL Attempt (Let's Encrypt)
 
-#### Firewall with HTTPS
-
-![UFW 443](../screenshots/ufw-443.png)
-
-#### SSL Certificate Details
-
-![SSL Certificate](../screenshots/ssl-certificate-details.png)
-
-## Real SSL Attempt with Let's Encrypt
-
-I tested whether I could configure a publicly trusted SSL certificate for the lab environment.
+A test was performed to configure a publicly trusted SSL certificate.
 
 ### Result
 
-This was not possible in the current setup because the server is running on a private local IP address (`192.168.129.36`) inside a virtual lab environment.
+This was not possible because the server is running on a private IP address:
 
-Let's Encrypt requires the domain and validation endpoint to be publicly reachable, or to use DNS-based validation with a real domain.  
-Because this lab server is only accessible on the local network, a publicly trusted certificate could not be issued.
+**192.168.10.10**
 
-### What I learned
+Let's Encrypt requires:
 
-- The difference between a self-signed certificate and a publicly trusted certificate
-- Why Let's Encrypt does not work directly with private local IP addresses
-- That public SSL usually requires either:
-  - a public domain name and public HTTP validation
-  - or DNS-01 validation with control over DNS records
+* A publicly accessible domain
+* Or DNS-based validation
 
-### Conclusion
+---
 
-For this lab, a self-signed certificate was the correct solution for testing HTTPS locally.
+## What I Learned
 
+* Installing and configuring Nginx
+* Hosting a custom website
+* Configuring firewall rules (UFW)
+* Hosting multiple sites on one server
+* Understanding HTTPS and SSL certificates
+* Difference between self-signed and trusted certificates
+
+---
+
+## Screenshots
+
+![Nginx Status](../screenshots/nginx-status.png)
+
+![Nginx Browser](../screenshots/nginx-browser.png)
+
+![Custom Website](../screenshots/custom-site-browser.png)
+
+![Web Root Files](../screenshots/web-root-files.png)
+
+![UFW Status](../screenshots/ufw-status.png)
+
+![Second Site](../screenshots/site2-browser.png)
+
+![HTTPS Warning](../screenshots/https-warning.png)
+
+![HTTPS Website](../screenshots/https-browser.png)
+
+![Firewall 443](../screenshots/ufw-443.png)
+
+![SSL Certificate](../screenshots/ssl-certificate-details.png)
