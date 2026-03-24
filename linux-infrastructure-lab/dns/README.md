@@ -96,11 +96,11 @@ A working local DNS server capable of resolving internal domain names within the
 
 ## Screenshots
 
-![DNS Test](../screenshots/dns-nslookup-test.png)
+![DNS Test](./screenshots/dns-nslookup-test.png)
 
-![BIND Status](../screenshots/bind-status.png)
+![BIND Status](./screenshots/bind-status.png)
 
-![DNS Config](../screenshots/dns-config.png)
+![DNS Config](./screenshots/dns-config.png)
 
 
 
