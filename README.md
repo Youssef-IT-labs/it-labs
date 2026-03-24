@@ -1,22 +1,31 @@
 # IT Labs
 
-Welcome to my GitHub.
+Welcome to my GitHub repository.
 
-This repository contains my hands-on IT labs and projects related to system administration, networking, and servers.
+This repository contains hands-on IT labs and projects focused on system administration, networking, and infrastructure.
 
-## Labs
+## Projects
 
-- Linux Server Lab
-- Linux Web Server Lab
+### Linux Infrastructure Lab
+A complete lab environment including:
 
-## Skills
+- SSH Server
+- Web Server (Nginx + HTTPS)
+- DNS Server (BIND9)
+- DHCP Server
 
-- Linux server installation
-- SSH configuration
-- Network configuration (DHCP)
-- VMware virtualization
-- Basic web server deployment
+All services are configured and tested in an isolated VMware lab network.
+
+## Skills Developed
+
+- Linux server administration
+- SSH configuration and remote access
+- Network configuration (DHCP & DNS)
+- Web server deployment (Nginx)
+- Firewall configuration (UFW)
+- Troubleshooting real-world networking issues
+- Virtualization with VMware
 
 ## Goal
 
-My goal is to build practical IT experience and prepare for a job in system and network administration.
+My goal is to build practical IT experience and grow towards a professional role in system and network administration.
