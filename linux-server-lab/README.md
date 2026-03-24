@@ -13,26 +13,21 @@ The goal of this lab was to install and configure an Ubuntu Server and enable re
 
 
 ---
-
-```markdown
 > **Note**
 >
 > During installation, the server initially received an IP address via DHCP on a bridged network.  
-> Later, the network configuration was changed to a NAT + Host-only setup for lab isolation and c
-
+> Later, the network configuration was changed to a NAT + Host-only setup for lab isolation and control.
 
 ## Network Configuration
 
 The server was configured with two network adapters:
 
-* Adapter 1: NAT (internet access)
-* Adapter 2: Host-only (VMnet1 lab network)
+- Adapter 1: NAT (internet access)  
+- Adapter 2: Host-only (VMnet1 lab network)  
 
 The server was assigned a static IP address on the lab network:
 
-```bash
-192.168.10.10
-```
+**192.168.10.10**
 
 ---
 
