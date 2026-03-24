@@ -94,12 +94,13 @@ A working local DNS server capable of resolving internal domain names within the
 
 ---
 
+## Screenshots
 
-### Screenshots
-
-![DNS Test](../screenshots/dns-ping-test.png)
+![DNS Test](../screenshots/dns-nslookup-test.png)
 
 ![BIND Status](../screenshots/bind-status.png)
 
 ![DNS Config](../screenshots/dns-config.png)
+
+
 
