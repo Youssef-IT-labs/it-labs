@@ -172,7 +172,6 @@ See the `screenshots` folder for installation, SSH, and network configuration im
 ## Screenshots
 
 ![Install](../screenshots/install.png)
-![Network](../screenshots/network.png)
 ![IP](../screenshots/ip.png)
 ![SSH Status](../screenshots/ssh-status.png)
 ![SSH Connection](../screenshots/ssh.png)
