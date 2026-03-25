@@ -1,31 +1,35 @@
-# IT Labs
+# IT Labs Portfolio
 
 Welcome to my GitHub repository.
 
-This repository contains hands-on IT labs and projects focused on system administration, networking, and infrastructure.
+This repository contains hands-on IT labs focused on system administration, networking, and infrastructure.
 
 ## Projects
 
 ### Linux Infrastructure Lab
-A complete lab environment including:
+A complete Ubuntu-based infrastructure lab including:
+- SSH server
+- Nginx web server with HTTPS
+- DNS (BIND9)
+- DHCP server
 
-- SSH Server
-- Web Server (Nginx + HTTPS)
-- DNS Server (BIND9)
-- DHCP Server
+[View project](./linux-infrastructure-lab/README.md)
 
-All services are configured and tested in an isolated VMware lab network.
+### Active Directory Lab
+An upcoming lab focused on Windows Server and domain management:
+- Domain controller setup
+- User and group management
+- Group Policy configuration
+- Domain join
 
-## Skills Developed
+[View project](./active-directory-lab/README.md)
 
+## Skills Overview
 - Linux server administration
-- SSH configuration and remote access
-- Network configuration (DHCP & DNS)
+- Networking (DNS, DHCP)
 - Web server deployment (Nginx)
-- Firewall configuration (UFW)
-- Troubleshooting real-world networking issues
-- Virtualization with VMware
+- System troubleshooting
+- Virtualization (VMware)
 
 ## Goal
-
-My goal is to build practical IT experience and grow towards a professional role in system and network administration.
+My goal is to build practical, real-world IT experience and grow into a professional system and network administrator role.
