@@ -21,7 +21,11 @@ The server was successfully promoted to a Domain Controller and the `corp.local`
 ## Notes
 This server was configured with a single host-only network adapter and no NAT, which is a better practice for an isolated Active Directory lab.
 
+
 ## Screenshots
 
+### Domain Controller Overview
 ![Domain Created](screenshots/domain-created.png)
+
+### Network Configuration
 ![IP Configuration](screenshots/ipconfig-clean.png)
