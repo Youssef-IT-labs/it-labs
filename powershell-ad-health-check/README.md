@@ -25,6 +25,7 @@ It does not deploy infrastructure, but focuses on validation and operational che
 ## How to Run
 ```powershell
 .\Invoke-ADHealthCheck.ps1
+```
 
 ## Example Output
 
