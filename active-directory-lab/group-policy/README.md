@@ -1,27 +1,108 @@
-# Group Policy
+# Group Policy – Desktop Wallpaper
 
 ## Objective
+
 Configure and apply a Group Policy Object (GPO) to enforce a desktop wallpaper for domain users.
 
-## What I configured
-- Created a shared folder on the Domain Controller (`\\DC01\wallpaper`)
-- Stored a wallpaper image (`corp.jpg`) in the shared folder
-- Configured sharing permissions (read access)
-- Created a Group Policy Object linked to the `CorpUsers` OU
-- Configured the Desktop Wallpaper policy using a UNC path
+## Environment
 
-## Validation
-- Forced policy update using `gpupdate /force`
-- Logged in as a domain user (`CORP\jdoe`)
-- Verified that the wallpaper was applied successfully
+* Domain: corp.local
+* Domain Controller: DC01
+* Client: CL01
+* User: CORP\jdoe
+
+## Configuration
+
+### 1. File Share
+
+A shared folder was created on the Domain Controller:
+
+C:\wallpaper
+
+Shared as:
+
+\DC01\wallpaper
+
+Permissions:
+
+* Share: Everyone (Read)
+* NTFS: Read access
+
+---
+
+### 2. GPO Configuration
+
+A GPO named:
+
+Corp Wallpaper Policy
+
+Was linked to:
+
+CorpUsers OU
+
+Configured under:
+
+User Configuration → Administrative Templates → Desktop → Desktop Wallpaper
+
+Settings:
+
+* Enabled
+* Path: \DC01\wallpaper\wallpaper.bmp
+* Style: Center
+
+---
+
+### 3. Apply Policy
+
+On the client:
+
+gpupdate /force
+
+User logged in as:
+
+CORP\jdoe
+
+---
+
+## Issue Encountered
+
+The wallpaper GPO did not apply correctly during initial testing.
+
+## Symptoms
+
+* Wallpaper remained black or unchanged
+* GPO appeared correctly configured
+* Shared file was accessible
+* User was in the correct OU
+
+## Root Cause
+
+The issue was caused by a registry-related problem on the client, which prevented the wallpaper policy from applying correctly.
+
+## Resolution
+
+* Verified GPO scope and OU placement
+* Verified access to the shared wallpaper file
+* Corrected the registry issue
+* Forced Group Policy update
+* Re-logged into the domain user
 
 ## Result
-The Group Policy was successfully applied, and the desktop wallpaper is enforced for domain users.
+
+The desktop wallpaper was successfully applied through Group Policy.
+
+---
 
 ## Screenshots
 
 ### GPO Configuration
+
 ![GPO](screenshots/gpo-config.png)
 
 ### Wallpaper Applied
+
 ![Wallpaper](screenshots/gpo-wallpaper-applied.png)
+
+### Share Access Validation
+
+![Share](screenshots/wallpaper-share-access.png)
