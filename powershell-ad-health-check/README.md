@@ -1,19 +1,27 @@
 # PowerShell AD Health Check
 
 ## Overview
-This project demonstrates how to use PowerShell to perform automated health checks on a Windows Server / Active Directory environment.
+This project demonstrates how to use PowerShell to perform a basic health check on a Windows Server / Active Directory environment.
 
-The goal is to simulate real-world sysadmin tasks where environment validation, troubleshooting, and reporting are essential.
+The script is designed to run on a Domain Controller and validate key components such as system information, network configuration, services, Active Directory objects, and file shares.
 
-## Objectives
-- Verify domain and system information
-- Check Domain Controller connectivity
-- Validate DNS configuration
-- Review critical services
-- Inspect basic system health indicators
+## Scope
+This is a practical lab built on an existing Active Directory environment.  
+It does not deploy infrastructure, but focuses on validation and operational checks.
 
-## Why this project matters
-In a real IT environment, administrators do not rely on manual checks alone.  
-Automation with PowerShell is essential to quickly assess system health, detect issues, and ensure consistency.
+## Features
+- Retrieve system information (hostname, OS, last boot time)
+- Display IPv4 network configuration
+- Validate DNS client settings
+- Check critical services (DNS, NTDS, Netlogon)
+- Verify Active Directory users and groups
+- Validate SMB shares
 
-This lab shows practical automation skills that are directly applicable to system administration roles.
+## Technologies Used
+- PowerShell 5.1
+- Active Directory Module
+- Windows Server
+
+## How to Run
+```powershell
+.\Invoke-ADHealthCheck.ps1
