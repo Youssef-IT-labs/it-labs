@@ -13,11 +13,12 @@ Configure secure file sharing using NTFS permissions and Role-Based Access Contr
 ## Configuration
 
 ### 1. Folder Structure
-
 Created structured directories:
 
+```
 C:\Shares\HR
 C:\Shares\IT
+```
 
 ---
 
