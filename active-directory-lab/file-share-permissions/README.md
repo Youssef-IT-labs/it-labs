@@ -57,8 +57,8 @@ Inheritance was disabled and replaced with explicit permissions.
 
 Folders were shared:
 
-* \DC01\HR
-* \DC01\IT
+\DC01\HR
+\DC01\IT
 
 Share permissions aligned with security groups.
 
@@ -83,12 +83,19 @@ Access was correctly enforced based on group membership.
 
 ---
 
+## Concept Applied
+
+Role-Based Access Control (RBAC)
+
+---
+
 ## Key Takeaways
 
 * Use groups instead of assigning permissions directly to users
 * Combine NTFS and Share permissions
 * Disable inheritance for full control
 * Validate access with real user testing
+
 
 ---
 
