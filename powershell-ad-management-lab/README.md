@@ -24,6 +24,7 @@ Run the script in PowerShell on a Domain Controller or on a management system wi
 
 ```powershell
 .\Create-ADUser.ps1
+```
 
 ## Notes
 The account is created with a temporary password.  
