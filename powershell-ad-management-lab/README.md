@@ -1,1 +1,0 @@
-# PowerShell AD Management Lab
