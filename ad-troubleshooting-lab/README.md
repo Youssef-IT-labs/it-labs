@@ -1,6 +1,4 @@
 
-## Scenario 1: User cannot log in
-
-### Problem
-A domain user is unable to log in to a domain-joined client machine (CL01).
-The user receives an authentication error.
+## Note
+This lab is intended to demonstrate structured troubleshooting approaches in Active Directory environments.  
+Additional scenarios can be added over time as new real-world cases are encountered.
